@@ -11,7 +11,7 @@
  	background-color: #B6DEC3;
  }
 
- .gamespace {
+ #gamespace {
  	width: 640px;
  	height: 480px;
  	background-image: url('../img/catcounterbg.png');
