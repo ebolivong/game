@@ -15,12 +15,13 @@ var otherImage = [
 'img/octopus.png',
 ];
 
-
-
 // var levels = [     ]
 
 
 function myFunction() {
+
+// var rand = Math.floor(Math.random() * (max - min + 1) + min);
+// $("#gamespace").attr("margin-top",rand);
 
 for (var c = 0; c < catImage.length; c++) {
 	$('<img>').attr('src', catImage[c]).appendTo('#gamespace');
@@ -34,5 +35,7 @@ for (var o = 0; o < otherImage.length; o++) {
 	$('<img>').attr('src', otherImage[o]).appendTo('#gamespace');
 }
 
-}
+};
+
+
 
