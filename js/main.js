@@ -1,29 +1,18 @@
-// This coding was to display one random image at refresh
-
-// var random_images_array = ['../img/cat1.png', '../img/cat2.png', '../img/cat3.png', '../img/cat4.png'];
-
-
-// function getRandomImage(imgAr, path) {
-// 	path = path || 'images/';
-// 	var num = Math.floor( Math.random() * imgAr.length);
-// 	var img = imgAr[ num ];
-// 	var imgStr = '<img src="' + path + img + '" alt = ""';
-// 	document.write(imgStr); document.close();
-// }
-
-
-//ask if each category of images should be made (cat, dog, other)
-
 var catImage = [
+'img/cat1.png',
+'img/cat2.png',
+'img/cat3.png',
+'img/cat4.png',
+];
 
-'../img/cat1.png',
+var dogImage = [
+'img/dog1.png',
+'img/dog2.png',
+];
 
-'../img/cat2.png',
-
-'../img/cat3.png',
-
-'../img/cat4.png',
-
+var otherImage = [
+'img/hamster.png',
+'img/octopus.png',
 ];
 
 
@@ -31,27 +20,19 @@ var catImage = [
 // var levels = [     ]
 
 
+function myFunction() {
 
-function updateRandomImages() {
-	var imageElements = $('img');
-	$.each(imageElements, function(index, element) {
-		displayRandomImage(element);
-	});
+for (var c = 0; c < catImage.length; c++) {
+	$('<img>').attr('src', catImage[c]).appendTo('#gamespace');
 }
 
-function displayRandomImage(element) {
-    var index = getRandomNumber(); 
-    $(element).attr( 'src', imageList[index] );
+for (var d = 0; d < dogImage.length; d++) {
+	$('<img>').attr('src', dogImage[d]).appendTo('#gamespace');
 }
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * 10);
+for (var o = 0; o < otherImage.length; o++) {
+	$('<img>').attr('src', otherImage[o]).appendTo('#gamespace');
 }
 
-$('button').click(function () {
-    updateRandomImages();
-});
-s
-//start off with some random images
-updateRandomImages();
+}
 
