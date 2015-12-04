@@ -18,24 +18,31 @@ var otherImage = [
 // var levels = [     ]
 
 
-function myFunction() {
+$('button').on('click', function() {
 
-// var rand = Math.floor(Math.random() * (max - min + 1) + min);
-// $("#gamespace").attr("margin-top",rand);
+	$(this).attr('disabled','disabled')
 
-for (var c = 0; c < catImage.length; c++) {
-	$('<img>').attr('src', catImage[c]).appendTo('#gamespace');
-}
+	$('#splashscreen').fadeOut(100);
 
-for (var d = 0; d < dogImage.length; d++) {
-	$('<img>').attr('src', dogImage[d]).appendTo('#gamespace');
-}
+    var $gs = $('#gamespace');
 
-for (var o = 0; o < otherImage.length; o++) {
-	$('<img>').attr('src', otherImage[o]).appendTo('#gamespace');
-}
+	for (var c = 0; c < catImage.length; c++) {
+		$('<img>')
+			.attr('src', catImage[c])
+			.appendTo('#gamespace')
+			.load(function() {
+				var $i = $(this);
+				$i.css({
+					'left': Math.floor(Math.random()*($gs.width() - $i.width())) +'px',
+					'top': Math.floor(Math.random()*($gs.height() - $i.height())) +'px'})
+			});
 
-};
+
+		
+	}
+
+
+});
 
 
 

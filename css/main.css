@@ -35,6 +35,26 @@
 	position: absolute;
 }
 
+#gamespace h2 {
+	font-family: pixeltwo;
+	line-height: 70px;
+	color: #000;
+}
+
+#splashscreen {
+	background-color: #FFFFCC;
+	position: absolute;
+	border: 3px solid #FFCC66;
+	border-radius: 30px;
+	width: 500px;
+	height: 300px;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
 h1 {
 	text-transform: uppercase;
 	font-family: pixelone;
@@ -69,4 +89,9 @@ button {
 	text-transform: uppercase;
 	font-size: 40px;
 	color: #fff;
+	opacity: 1;
+}
+
+button:disabled {
+	opacity: 0;
 }
