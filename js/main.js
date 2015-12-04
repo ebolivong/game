@@ -35,14 +35,18 @@ $('button').on('click', function() {
 				$i.css({
 					'left': Math.floor(Math.random()*($gs.width() - $i.width())) +'px',
 					'top': Math.floor(Math.random()*($gs.height() - $i.height())) +'px'})
+	
 			});
-
-
-		
 	}
 
+	//attempt to hide cat images after a few seconds
+	// setTimeout(function() {
+ //  	document.getElementById(catImage).style.display='none'
+	// }, 100);
 
 });
+
+
 
 
 
