@@ -39,34 +39,37 @@ $('button').on('click', function() {
 	
 			});
 	}
-		for (var d = 0; d < dogImage.length; d++) {
-		$('<img>')
-			.attr('src', dogImage[d])
-			.appendTo('#gamespace')
-			.load(function() {
-				var $i = $(this);
-				$i.css({
-					'left': Math.floor(Math.random()*($gs.width() - $i.width())) +'px',
-					'top': Math.floor(Math.random()*($gs.height() - $i.height())) +'px'})
 	
-			});
+	for (var d = 0; d < dogImage.length; d++) {
+	$('<img>')
+		.attr('src', dogImage[d])
+		.appendTo('#gamespace')
+		.load(function() {
+			var $i = $(this);
+			$i.css({
+				'left': Math.floor(Math.random()*($gs.width() - $i.width())) +'px',
+				'top': Math.floor(Math.random()*($gs.height() - $i.height())) +'px'})
+
+		});
 	}
+
+	var count = 5;
+
+	var cattimer = function() {
+		count--;
+		$('.cattimer').text(count);
+		if ( count <= 0) {
+			console.log("Game Over");
+			$('img').addClass('hide');
+			$('#guessscreen').removeClass('hide');
+			clearInterval(timer);
+		}
+	};
+	var timer = setInterval(cattimer, 1000);
 
 
 });
 
-var count = 5;
-
-var cattimer = function() {
-	count--;
-	$('.cattimer').text(count);
-	if ( count <= 0) {
-		console.log("Game Over");
-		$(catImage).hide();
-		clearInterval(timer);
-	}
-};
-var timer = setInterval(cattimer, 1000);
 
  var inputQuantity = [];
     $(function() {
