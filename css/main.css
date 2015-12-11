@@ -55,6 +55,54 @@
 	right: 0;
 }
 
+#guessscreen {
+	background-color: #FFFFCC;
+	position: absolute;
+	border: 3px solid #FFCC66;
+	border-radius: 30px;
+	width: 500px;
+	height: 300px;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.hide {
+	display: none;
+}
+
+input[type="number"] {
+	width: 150px;
+	height: 100px;
+	font-family: pixelone;
+	font-size: 70px;
+	color: #BE1E2D;
+	text-align: center;
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="submit"] {
+	width: 218px;
+	height: 75px;
+	margin-top: 15px;
+	background-image: url('../img/startbutton.png');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: 0;
+	font-family: pixeltwo;
+	text-transform: uppercase;
+	font-size: 40px;
+	color: #fff; 
+}
+
 h1 {
 	text-transform: uppercase;
 	font-family: pixelone;
@@ -95,3 +143,4 @@ button {
 button:disabled {
 	opacity: 0;
 }
+

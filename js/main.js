@@ -1,21 +1,22 @@
 var catImage = [
-'img/cat1.png',
-'img/cat2.png',
-'img/cat3.png',
-'img/cat4.png',
+'img/cat1.gif',
+'img/cat2.gif',
+'img/cat3.gif',
+'img/cat4.gif',
 ];
 
 var dogImage = [
-'img/dog1.png',
-'img/dog2.png',
+'img/dog1.gif',
+'img/dog2.gif',
 ];
 
 var otherImage = [
-'img/hamster.png',
-'img/octopus.png',
+'img/whale.gif',
+'img/octopus.gif',
 ];
 
 // var levels = [     ]
+
 
 
 $('button').on('click', function() {
@@ -38,13 +39,57 @@ $('button').on('click', function() {
 	
 			});
 	}
+		for (var d = 0; d < dogImage.length; d++) {
+		$('<img>')
+			.attr('src', dogImage[d])
+			.appendTo('#gamespace')
+			.load(function() {
+				var $i = $(this);
+				$i.css({
+					'left': Math.floor(Math.random()*($gs.width() - $i.width())) +'px',
+					'top': Math.floor(Math.random()*($gs.height() - $i.height())) +'px'})
+	
+			});
+	}
 
-	//attempt to hide cat images after a few seconds
-	// setTimeout(function() {
- //  	document.getElementById(catImage).style.display='none'
-	// }, 100);
 
 });
+
+var count = 5;
+
+var cattimer = function() {
+	count--;
+	$('.cattimer').text(count);
+	if ( count <= 0) {
+		console.log("Game Over");
+		$(catImage).hide();
+		clearInterval(timer);
+	}
+};
+var timer = setInterval(cattimer, 1000);
+
+ var inputQuantity = [];
+    $(function() {
+      $(".quantity").each(function(i) {
+        inputQuantity[i]=this.defaultValue;
+         $(this).data("idx",i); 
+      });
+
+      $(".quantity").on("keyup", function (e) {
+        var $field = $(this),
+            val=this.value,
+            $thisIndex=parseInt($field.data("idx"),10);
+        if (this.validity && this.validity.badInput || isNaN(val) || $field.is(":invalid") ) {
+            this.value = inputQuantity[$thisIndex];
+            return;
+        } 
+        if (val.length > Number($field.attr("maxlength"))) {
+          val=val.slice(0, 5);
+          $field.val(val);
+        }
+        inputQuantity[$thisIndex]=val;
+      });      
+    });
 
 
 
