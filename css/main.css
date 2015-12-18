@@ -55,6 +55,12 @@
 	right: 0;
 }
 
+.cattimer {
+	font-family: pixeltwo;
+	color: #000;
+	font-size: 30px;
+}
+
 #guessscreen {
 	background-color: #FFFFCC;
 	position: absolute;

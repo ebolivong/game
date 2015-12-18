@@ -18,7 +18,7 @@ var otherImage = [
 // var levels = [     ]
 
 
-
+// Start Button 
 $('button').on('click', function() {
 
 	$(this).attr('disabled','disabled')
@@ -39,7 +39,7 @@ $('button').on('click', function() {
 	
 			});
 	}
-	
+
 	for (var d = 0; d < dogImage.length; d++) {
 	$('<img>')
 		.attr('src', dogImage[d])
@@ -53,13 +53,13 @@ $('button').on('click', function() {
 		});
 	}
 
-	var count = 5;
+	var count = 6;
 
 	var cattimer = function() {
 		count--;
 		$('.cattimer').text(count);
 		if ( count <= 0) {
-			console.log("Game Over");
+			// console.log("Game Over");
 			$('img').addClass('hide');
 			$('#guessscreen').removeClass('hide');
 			clearInterval(timer);
@@ -71,6 +71,7 @@ $('button').on('click', function() {
 });
 
 
+// Guess Screen
  var inputQuantity = [];
     $(function() {
       $(".quantity").each(function(i) {
@@ -91,8 +92,16 @@ $('button').on('click', function() {
           $field.val(val);
         }
         inputQuantity[$thisIndex]=val;
-      });      
-    });
+
+        if ( inputQuantity == catImage.length ) {
+   			console.log("CORRECT!")
+   		}
+   		else {
+   			console.log("WRONG :(")
+   		}
+
+   		});  
+	});
 
 
 
